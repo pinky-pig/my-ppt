@@ -1,69 +1,81 @@
 ---
+# try also 'default' to start simple
 theme: seriph
+# random image from a curated Unsplash collection by Anthony
+# like them? see https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/collection/94734566/1920x1080
-class: text-center
+# apply any windi css classes to the current slide
+class: 'text-center'
+# https://sli.dev/custom/highlighters.html
 highlighter: shiki
+# show line numbers in code blocks
 lineNumbers: false
+# some information about the slides, markdown enabled
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
 
   Learn more at [Sli.dev](https://sli.dev)
+# persist drawings in exports and build
 drawings:
   persist: false
-transition: slide-left
-title: Welcome to Slidev
-mdc: true
+# use UnoCSS (experimental)
+css: unocss
 ---
 
-# Welcome to Slidev
+# 3D 地图制作
 
-Presentation slides for developers
+QGIS -> Blender -> PS
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
+  <span 
+    @click="$slidev.nav.next" 
+    class="px-2 py-1 rounded cursor-pointer" 
+    hover="bg-white bg-opacity-10"
+    >
+    开始
+    <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
+    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+<!-- 
+这里是备注，在演讲者模式的时候显示 
 -->
 
 ---
-transition: fade-out
----
 
-# What is Slidev?
+# QGIS 操作
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+操作 QGIS ，对地理高程数据进行处理。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+- 📝 **插件** - HCMGIS | TianDiTu Tools
+- 🎨 **基础操作** - 合并、裁剪、导出等
+- 🛠 **流程化** - 下载、修改、导出
+
+<img
+  class="absolute top-16 right-8 w-120 rounded-10px"
+  style="outline: 4px solid #cecece; border-radius: 10px; outline-offset: 4px;"
+  src="/qgis/1.QGIS概览.png"
+/>
+
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+QGIS 文档 [Document](https://docs.qgis.org/3.16/zh_Hans/docs/documentation_guidelines/index.html)
 
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
+主要是记录流程化
 -->
 
 <style>
@@ -78,32 +90,23 @@ h1 {
 }
 </style>
 
-<!--
-Here is another comment.
--->
-
----
-layout: default
 ---
 
-# Table of contents
 
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
+# QGIS
 
-<Toc maxDepth="1"></Toc>
+<Suspense>
+  <QGISOperationImage  />
+</Suspense>
 
----
-transition: slide-up
-level: 2
+
 ---
 
 # Navigation
 
 Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 |     |     |
 | --- | --- |
@@ -117,7 +120,6 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
   v-click
   class="absolute -bottom-9 -left-7 w-80 opacity-50"
   src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
 />
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
@@ -145,7 +147,7 @@ function updateUser(id: number, update: User) {
 }
 ```
 
-<arrow v-click="[3, 4]" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
 
 [^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
 
@@ -193,16 +195,6 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 </div>
 </div>
 
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
 
 ---
 class: px-20
@@ -226,9 +218,9 @@ theme: seriph
 ---
 ```
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
+<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
 
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
+<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
 
 </div>
 
@@ -260,7 +252,6 @@ Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
       :enter="final"
       class="absolute top-0 left-0 right-0 bottom-0"
       src="https://sli.dev/logo-square.png"
-      alt=""
     />
     <img
       v-motion
@@ -268,7 +259,6 @@ Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
       :enter="final"
       class="absolute top-0 left-0 right-0 bottom-0"
       src="https://sli.dev/logo-circle.png"
-      alt=""
     />
     <img
       v-motion
@@ -276,7 +266,6 @@ Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
       :enter="final"
       class="absolute top-0 left-0 right-0 bottom-0"
       src="https://sli.dev/logo-triangle.png"
-      alt=""
     />
   </div>
 
@@ -325,7 +314,7 @@ LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 Inline $\sqrt{3x-1}+(1+x)^2$
 
 Block
-$$ {1|3|all}
+$$
 \begin{array}{c}
 
 \nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
@@ -348,9 +337,9 @@ $$
 
 You can create diagrams / graphs from textual descriptions, directly in your Markdown.
 
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
+<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
 
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
+```mermaid {scale: 0.5}
 sequenceDiagram
     Alice->John: Hello John, how are you?
     Note over Alice,John: A typical interaction
@@ -361,26 +350,6 @@ graph TD
 B[Text] --> C{Decision}
 C -->|One| D[Result 1]
 C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
 ```
 
 ```plantuml {scale: 0.7}
@@ -422,10 +391,6 @@ database "MySql" {
 
 [Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
----
-src: ./pages/multiple-entries.md
-hide: false
----
 
 ---
 layout: center
