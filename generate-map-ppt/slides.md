@@ -11,14 +11,14 @@ info: |
   Learn more at [Sli.dev](https://sli.dev)
 drawings:
   persist: false
-transition: slide-left
+transition: slide-up
 title: Welcome to Slidev
 mdc: true
 ---
 
-# Welcome to Slidev
+# 3D 地图制作
 
-Presentation slides for developers
+QGIS -> Blender -> PS
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -41,29 +41,32 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
+transition: slide-up
 ---
+<!-- transition: fade-out -->
 
-# What is Slidev?
+# QGIS 操作
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+操作 QGIS ，对地理高程数据进行处理。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+- 📝 **插件** - HCMGIS | TianDiTu Tools
+- 🎨 **基础操作** - 合并、裁剪、导出等
+- 🛠 **流程化** - 下载、修改、导出
+
+
+<img
+  class="absolute top-16 right-8 w-120 rounded-10px"
+  style="outline: 4px solid #cecece; border-radius: 10px; outline-offset: 4px;"
+  src="/qgis/1.QGIS概览.png"
+/>
 
 <br>
 <br>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+QGIS 文档 [Document](https://docs.qgis.org/3.16/zh_Hans/docs/documentation_guidelines/index.html)
 
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
+主要是记录流程化
 -->
 
 <style>
@@ -81,6 +84,22 @@ h1 {
 <!--
 Here is another comment.
 -->
+
+
+---
+src: ./pages/qgis.md
+hide: false
+---
+
+---
+layout: center
+class: text-center
+---
+
+# Arvin Wang
+
+[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+
 
 ---
 layout: default
@@ -177,7 +196,7 @@ We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that
 ```
 
 <!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+<!-- <Counter :count="10" m="t-4" /> -->
 
 Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
@@ -422,16 +441,3 @@ database "MySql" {
 
 [Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
----
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
